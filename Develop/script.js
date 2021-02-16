@@ -27,6 +27,26 @@ function determineLength() {
     alert("Moving on...")
   }
 }
+
+// Determine whether user wants uppercase characters in password
+
+function determineUppercase() {
+  uppercaseCheck = prompt("Would you like to include uppercase letters in your password? \n(yes or no)");
+
+  if (uppercaseCheck === null || uppercaseCheck === "") {
+    alert("Invalid! Please select yes or no.");
+  }else if (uppercaseCheck === "yes" || uppercaseCheck === "y") {
+    uppercaseCheck = true;
+    return uppercaseCheck;
+  }else if (uppercaseCheck === "no" || uppercaseCheck === "n") {
+    uppercaseCheck = false;
+    return uppercaseCheck;
+  }else {
+    alert("Invalid! Please select yes or no.");
+    determineUppercase();
+  }
+  return uppercaseCheck;
+}
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
