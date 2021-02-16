@@ -70,6 +70,26 @@ function determineNumbers() {
   return numbersCheck;
 }
 
+// Determine whether user wants special characters in password
+function determineSpecial() {
+  specialCheck = prompt("Would you like to include any special characters in your password? \n (Yes or No)");
+  specialCheck = specialCheck.toLowerCase();
+
+  if (specialCheck === null || specialCheck === "") {
+    alert("Please select an answer!");
+    determineSpecial();
+  }else if (specialCheck === "yes" || specialCheck === "y") {
+    specialCheck = true;
+    return specialCheck;
+  }else if (specialCheck === "no" || specialCheck === "n") {
+    specialCheck = false;
+    return specialCheck;
+  }else {
+    alert("Yes or No?")
+    determineSpecial();
+  }
+  return specialCheck;
+}
 
 
 // Write password to the #password input
