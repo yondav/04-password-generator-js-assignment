@@ -9,7 +9,24 @@ var uppercaseCheck;
 var numbersCheck;
 var specialCheck;
 
+// Determine length of password
 
+function determineLength() {
+  passwordLength = prompt("How long would you like your password to be (8-128 characters)?");
+
+  if (passwordLength < 8) {
+    alert("Password must be at least 8 characters long.");
+    determineLength();
+  }else if (passwordLength > 128) {
+    alert("Password must be less than 128 characters long.");
+    determineLength();
+  }else if(isNaN(passwordLength)) {
+    alert("Invalid character! Please select a number between 8 and 128.");
+    determineLength();
+  }else {
+    alert("Moving on...")
+  }
+}
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
