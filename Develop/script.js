@@ -47,6 +47,30 @@ function determineUppercase() {
   }
   return uppercaseCheck;
 }
+
+// Determine numbers in password
+function determineNumbers() {
+  numbersCheck = prompt("Would you like to include numbers in your password? \n(yes or no)");
+  numbersCheck = numbersCheck.toLowerCase();
+
+  if (numbersCheck === null || numbersCheck === "") {
+    alert("Please select an answer!");
+    determineNumbers();
+  }else if (numbersCheck === "yes" || numbersCheck === "y") {
+    numbersCheck = true;
+    return numbersCheck;
+  }else if (numbersCheck === "no" || numbersCheck === "n") {
+    numbersCheck = false;
+    return numbersCheck;
+  }else {
+    alert("Yes or No?");
+    determineNumbers();
+  }
+  return numbersCheck;
+}
+
+
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
