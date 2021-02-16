@@ -32,6 +32,7 @@ function determineLength() {
 
 function determineUppercase() {
   uppercaseCheck = prompt("Would you like to include uppercase letters in your password? \n(yes or no)");
+  uppercaseCheck = uppercaseCheck.toLowerCase();
 
   if (uppercaseCheck === null || uppercaseCheck === "") {
     alert("Invalid! Please select yes or no.");
