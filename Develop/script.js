@@ -174,7 +174,18 @@ console.log(specialCheck);
 var userPref = "";
 
 // Following if statements will compile the user's preferences to generate a password.
-
+if (lowercaseCheck) {
+  userPref += lowercaseChar;
+}
+if (uppercaseCheck) {
+  userPref += uppercaseChar;
+}
+if (numberCheck) {
+  userPref += numberChar;
+}
+if (specialCheck) {
+  userPref += specialChar;
+}
   console.log(userPref);
 
 // Write password to the #password input
