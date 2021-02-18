@@ -186,9 +186,10 @@ if (numberCheck) {
 if (specialCheck) {
   userPref += specialChar;
 }
+
   console.log(userPref);
 
-// Write password to the #password input
+// When user hits generate password button, they are prompted with a question to determine the length of their password.
 function generatePassword() {
   var password = [];
   var passwordLength = prompt("How long would you like your password to be (8-128 characters)?");
@@ -201,7 +202,8 @@ function generatePassword() {
       generatePassword();
     }
   }
-
+  
+  // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
