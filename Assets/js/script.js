@@ -19,13 +19,13 @@ function generatePassword() {
     }
 
 // Following confirmation prompts will appear when the page is opened and will collect user preferences.
-var lowercaseCheck = confirm("Select Okay if you would like to include lowercase letters in your password?");
+var lowercaseCheck = confirm("Select OK if you would like to include lowercase letters in your password?");
 console.log(lowercaseCheck);
-var uppercaseCheck = confirm("Select Okay if you would like to include uppercase letters in your password?");
+var uppercaseCheck = confirm("Select OK if you would like to include uppercase letters in your password?");
 console.log(uppercaseCheck);
-var numberCheck = confirm("Select Okay if you would like to include numbers in your password?");
+var numberCheck = confirm("Select OK if you would like to include numbers in your password?");
 console.log(numberCheck);
-var specialCheck = confirm("Select Okay if you would like to include special characters in your password?")
+var specialCheck = confirm("Select OK if you would like to include special characters in your password?")
 console.log(specialCheck);
 var userPref = "";
 
