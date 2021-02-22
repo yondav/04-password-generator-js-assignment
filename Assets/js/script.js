@@ -1,8 +1,8 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
-var lowercaseChar = "abcdefghijklmnopqrstuvwxyz";
-var uppercaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var numberChar = "0123456789";
+var btn = document.querySelector("#generate");
+var lowChar = "abcdefghijklmnopqrstuvwxyz";
+var upChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numChar = "0123456789";
 var specialChar = "!@#$%^&*()_-+={}[];:'~<,>.?/|";
 
 // Write password to the #password input - Thank you Tomek for the !passwordLength method to allow user to cancel out of the prompt box!
@@ -18,35 +18,28 @@ function generatePassword() {
       generatePassword();
     }
 
-// Following confirmation prompts will appear when the page is opened and will collect user preferences.
-var lowercaseCheck = confirm("Select OK if you would like to include lowercase letters in your password?");
-console.log(lowercaseCheck);
-var uppercaseCheck = confirm("Select OK if you would like to include uppercase letters in your password?");
-console.log(uppercaseCheck);
-var numberCheck = confirm("Select OK if you would like to include numbers in your password?");
-console.log(numberCheck);
+// prompts for userPref
+var lowCheck = confirm("Select OK if you would like to include lowercase letters in your password?");
+var upCheck = confirm("Select OK if you would like to include uppercase letters in your password?");
+var numCheck = confirm("Select OK if you would like to include numbers in your password?");
 var specialCheck = confirm("Select OK if you would like to include special characters in your password?")
-console.log(specialCheck);
 var userPref = "";
 
-// Following if statements will compile the user's preferences to generate a password.
-if (lowercaseCheck) {
-  userPref += lowercaseChar;
+// adds selected character types
+if (lowCheck) {
+  userPref += lowChar;
 }
-if (uppercaseCheck) {
-  userPref += uppercaseChar;
+if (upCheck) {
+  userPref += upChar;
 }
-if (numberCheck) {
-  userPref += numberChar;
+if (numCheck) {
+  userPref += numChar;
 }
 if (specialCheck) {
   userPref += specialChar;
 }
 
-console.log(userPref);
-
-// For loop makes it so another character is added until the user set length of password is reached.
-// Password = Password + random character based on the users selected inclusions at the length of the user set length.
+// array starts empty, add a character until the user determined passwordLength is reached
 for (var i = 0; i < passwordLength; i++) {
   password += userPref[Math.floor(Math.random() * userPref.length)];
 }
@@ -62,4 +55,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+btn.addEventListener("click", writePassword);
